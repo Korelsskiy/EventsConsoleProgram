@@ -10,6 +10,7 @@ namespace Events
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Здарова, события!");
         }
     }
 }
