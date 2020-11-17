@@ -8,9 +8,19 @@ namespace Events
 {
     class Program
     {
+        public delegate string NameDelegate(); // это делегат, он может вызвать любое количество подписавшихся на него
+        // методов, схожих по сигнатуре
         static void Main(string[] args)
         {
-            Console.WriteLine("Здарова, события!");
+           NameDelegate name = GetDeveloperName; // подписались на метод
+
+           Console.WriteLine(name.Invoke()); // вызвали деленат, а он метод
+           Console.ReadLine();
+        }
+
+        private static string GetDeveloperName()
+        {
+            return "Кирилл";
         }
     }
 }
